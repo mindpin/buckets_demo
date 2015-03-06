@@ -1,0 +1,31 @@
+<div class="modal fade" id="bucket-add">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add this shot to a bucket</h4>
+      </div>
+      <div class="modal-body">
+        <ol class="buckets group">
+          <% @buckets.each do |bucket| %>
+            <li class="group unbucketed" data-id="<%= bucket.id %>">
+              <a href="#">
+
+                <strong><%= bucket.name %></strong>
+                <span class="bucket-meta">
+                  2 shots
+                </span>
+                <span class="bucket-meta">updated about 4 hours ago</span>
+
+              </a>
+            </li>
+          <% end -%>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+        <button type="button" class="btn btn-primary">+ Create a new bucket</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

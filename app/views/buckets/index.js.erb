@@ -1,0 +1,5 @@
+$('#bucket-add').remove();
+$('body').append('<%= j render "index.html.erb" %>');
+$('#bucket-add').modal('show');
+$('li.group').on('mouseover', function(){$('li.group.current').removeClass('current'); $(this).addClass('current')})
+$('li.group').on('click', function(){$(this).toggleClass('bucketed').toggleClass('unbucketed')})

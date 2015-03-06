@@ -3,3 +3,5 @@
 <div class="well">
   <%= @post.content.html_safe %>
 </div>
+
+<%= link_to 'bucket', buckets_path(format: :js), remote: true, class: 'btn btn-primary' %>
