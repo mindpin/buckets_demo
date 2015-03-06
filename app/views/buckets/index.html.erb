@@ -1,0 +1,26 @@
+<h1>Listing Buckets</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>描述</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @buckets.each do |bucket| %>
+      <tr>
+        <td><%= link_to bucket.name, bucket %></td>
+        <td><%= bucket.description %></td>
+        <td><%= link_to 'Edit', edit_bucket_path(bucket) %></td>
+        <td><%= link_to 'Destroy', bucket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>
+
+<p>  </p>
+
+<%= link_to 'New Bucket', new_bucket_path, class: 'btn btn-primary' %>

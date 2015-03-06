@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :buckets
+
   resources :posts
-  root 'posts#index'
+  root 'buckets#index'
 end
