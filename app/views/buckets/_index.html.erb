@@ -8,7 +8,7 @@
       <div class="modal-body">
         <ol class="buckets group">
           <% @buckets.each do |bucket| %>
-            <li class="group unbucketed" data-id="<%= bucket.id %>">
+            <li class="group <%= @post and @post.buckets.include?(bucket) ? 'bucketed' : 'unbucketed'  %>" data-id="<%= bucket.id %>">
               <a href="#">
 
                 <strong><%= bucket.name %></strong>
@@ -24,7 +24,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
-        <button type="button" class="btn btn-primary">+ Create a new bucket</button>
+        <%= link_to '+ Create a new bucket', new_post_bucket_path(@post), remote: true, class: 'btn btn-primary' %>
+        <%#<button type="button" class="btn btn-primary">+ Create a new bucket</button>%>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
