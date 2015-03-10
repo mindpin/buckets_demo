@@ -5,3 +5,7 @@
 </div>
 
 <%= link_to 'bucket', post_buckets_path(@post, format: :js), remote: true, class: 'btn btn-primary' %>
+
+<script type="text/javascript">
+  var post_id = '<%= @post.id %>';
+</script>

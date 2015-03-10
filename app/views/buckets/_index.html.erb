@@ -8,17 +8,7 @@
       <div class="modal-body">
         <ol class="buckets group">
           <% @buckets.each do |bucket| %>
-            <li class="group <%= @post and @post.buckets.include?(bucket) ? 'bucketed' : 'unbucketed'  %>" data-id="<%= bucket.id %>">
-              <a href="#">
-
-                <strong><%= bucket.name %></strong>
-                <span class="bucket-meta">
-                  2 shots
-                </span>
-                <span class="bucket-meta">updated about 4 hours ago</span>
-
-              </a>
-            </li>
+            <%= render bucket %>
           <% end -%>
         </ol>
       </div>

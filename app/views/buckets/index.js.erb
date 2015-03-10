@@ -2,4 +2,18 @@ $('#bucket-add').remove();
 $('body').append('<%= j render "index.html.erb" %>');
 $('#bucket-add').modal('show');
 $('li.group').on('mouseover', function(){$('li.group.current').removeClass('current'); $(this).addClass('current')})
-$('li.group').on('click', function(){$(this).toggleClass('bucketed').toggleClass('unbucketed')})
+$('li.group').on('click', function(){
+  var bucket_id = $(this).data('id');
+  console.log(bucket_id);
+  var bucketed = $(this).hasClass('bucketed');
+  if(bucketed) {
+    var url = '/posts/' + post_id + '/bucketings/' + bucket_id;
+    $.ajax({
+      type: "DELETE",
+      url: url
+    });
+  } else {
+    $.post('/posts/' + post_id + '/bucketings', {bucket_id: bucket_id})
+  }
+  $(this).toggleClass('bucketed').toggleClass('unbucketed')
+})
