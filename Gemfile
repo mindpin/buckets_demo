@@ -54,7 +54,7 @@ gem 'kaminari-bootstrap'
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_21]
+  # gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
 end
 
