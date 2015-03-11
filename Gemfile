@@ -62,3 +62,8 @@ gem "mina",
     :git => "git://github.com/fushang318/mina.git",
     :tag => "v0.2.0fix"
 
+group :production do
+  gem 'rails_serve_static_assets'
+  gem 'rails_stdout_logging'
+end
+
