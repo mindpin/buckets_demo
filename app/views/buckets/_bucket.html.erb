@@ -1,0 +1,11 @@
+<li class="group <%= @post and @post.buckets.include?(bucket) ? 'bucketed' : 'unbucketed'  %>" data-id="<%= bucket.id %>" id="bucket_<%= bucket.id %>">
+  <a href="#">
+
+    <strong><%= bucket.name %></strong>
+    <span class="bucket-meta">
+      <%= bucket.posts.count %> posts
+    </span>
+    <span class="bucket-meta"><%= bucket.updated_at %></span>
+
+  </a>
+</li>
