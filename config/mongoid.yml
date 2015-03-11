@@ -1,0 +1,9 @@
+<% credentials = JSON.parse(ENV["VCAP_SERVICES"])["mongodb"][0]["credentials"] %>
+production:
+  sessions:
+    default:
+      database: <%= credentials["name"] %>
+      hosts:
+        - <%= "#{credentials['host']}:#{credentials['port']}" %>
+      username: <%= credentials["username"] %>
+      password: <%= credentials["password"] %>
