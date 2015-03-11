@@ -1,0 +1,6 @@
+production:  
+  sessions:  
+    default:  
+      uri: <%= ENV['Q_MONGOLAB_URI'] %>  
+      options:  
+
